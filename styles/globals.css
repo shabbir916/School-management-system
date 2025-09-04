@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables */
+:root {
+  --background: #000000; /* default black background */
+  --foreground: #ffffff; /* default white text */
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Custom Glassmorphism class */
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass:hover {
+    background: rgba(16, 185, 129, 0.2); /* emerald greenish */
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+}
